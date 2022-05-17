@@ -38,6 +38,7 @@ Object.defineProperties(ArrayPrototype, {
     },
     "new": {
         value: function () {
+            this.value = [[]]
             return {
                 value: this.value,
                 level: this.level,
