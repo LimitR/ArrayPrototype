@@ -19,14 +19,14 @@ Object.defineProperties(ArrayPrototype, {
         writable: false
     },
     "get": {
-        value: function () {
-            return this.value[this.level];
+        value: function (lvl = 0) {
+            const max_lvl = this.level - lvl >= 0 ? this.level - lvl : 0;
+            return this.value[max_lvl];
         },
         writable: false
     },
     "getPrototype": {
         value: function () {
-            let i = 0;
             return [...this.value.slice(0, this.level + 1)].flat()
         }
     },
